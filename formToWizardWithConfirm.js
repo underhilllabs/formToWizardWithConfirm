@@ -10,8 +10,8 @@
             submitButton: "" 
         }, options); 
         
+        // topLevel Form
         var element = this;
-
         var steps = $(element).find("fieldset");
         var count = steps.size();
         var submmitButtonName = "#" + options.submitButton;
@@ -55,16 +55,16 @@
 
             $("#confirm").bind("click", function(e) {
                 $("#" + stepName).hide();
-                $("#confirmPage").show();
-                $("input#reset").show();
+                $(element).find("#confirmPage").show();
+                $(element).find("input#reset").show();
                 // Show Submit Button
                 $(submmitButtonName).show();
                 // Adjust the Steps Map at top of page
                 $("#steps li").removeClass("current");
                 // Show each fieldset
-                $("#ucdelection-multiballot-form div.form-step").css('display', 'block');
-                $("#ucdelection-multiballot-form p.step-commands").css('display', 'none');
-                $("#ucdelection-multiballot-form div.form-type-radio").css('visibility', 'hidden');
+                $(element).find("div.form-step").css('display', 'block');
+                $(element).find("p.step-commands").css('display', 'none');
+                $(element).find("div.form-type-radio").css('visibility', 'hidden');
                 // Unbind the click trigger on tr
                 $('tbody tr').unbind("click");
                 $('tbody tr.hilite td:first-child').append("<span class='winner'>&#x2713;</span>");
